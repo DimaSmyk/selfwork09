@@ -1,16 +1,17 @@
 package selfwork09.task01;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ListSort {
     public static void main(String[] args) {
 
-        ArrayList<String> list = new ArrayList<>();
+        List<String> list = new ArrayList<>();
         list.add("2sc");
         list.add("9ds");
         list.add("0ds");
-        list.add("and");
-        list.add("hello");
+        list.add("And");
+        list.add("Hello");
         list.add("2gs");
         list.add("dsc");
         list.add("3dsc");
@@ -18,17 +19,13 @@ public class ListSort {
 
     }
 
-    public static ArrayList<String> sortDelete(ArrayList<String> list) {
-
-        for (int i = list.size() - 1; i >= 0; i--) {
-            if (list.get(i).length() > 4) {
-                list.remove(i);
+    public static List<String> sortDelete (List<String> list) {
+        List<String> list1= new ArrayList<>();
+        for (int j = 0; j < list.size(); j++){
+            if (list.get(j).length() < 4 && list.get(j).matches("([a-zA-Z].*)")){
+                list1.add(list.get(j));
             }
-            if (list.get(i).matches("([0-9].*)")) {
-                list.remove(i);
-            }
-        }
-        return list;
+        }return list1;
     }
 }
 

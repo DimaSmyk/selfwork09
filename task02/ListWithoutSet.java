@@ -1,11 +1,13 @@
 package selfwork09.task02;
 
+
 import java.util.ArrayList;
+import java.util.List;
 
 public class ListWithoutSet {
 
     public static void main(String[] args) {
-        ArrayList<String> uniqueList = new ArrayList<>();
+        List<String> uniqueList = new ArrayList<>();
 
         uniqueList.add("abc");
         uniqueList.add("abc");
@@ -15,23 +17,16 @@ public class ListWithoutSet {
         uniqueList.add("abce");
         uniqueList.add("abce");
         uniqueList.add("abc2e");
-        System.out.println(uniqueSort(uniqueList));
+        System.out.println(sort(uniqueList));
     }
 
-    public static ArrayList<String> uniqueSort (ArrayList<String> uniqueList) {
-        String str1;
-        String str2;
-
-        for (int i = 0; i < uniqueList.size(); i++) {
-            str1 = uniqueList.get(i);
-
-            for (int j = i + 1; j < uniqueList.size(); j++) {
-                str2 = uniqueList.get(j);
-                if (str1.equals(str2)) {
-                    uniqueList.remove(j);
-                    j--;
-                }
+    public static List<String> sort(List <String> uniqueList) {
+        List <String> newList = new ArrayList<>();
+        for (String s : uniqueList){
+            if (!newList.contains(s)){
+                newList.add(s);
             }
-        }return uniqueList;
+        }return newList;
     }
+
 }
